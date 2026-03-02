@@ -1,17 +1,17 @@
 # Ramon Solis
 # Feb 27, 2026
 #
-# Meraki Dashboard Tools API GUI Edition with MFA by Ramon Solis
-#
-# pip install meraki fpdf2 matplotlib python-dotenv
-# Compiler pyinstaller --onefile --noconsole Script.py
+# Meraki Dashboard Tools API GUI Edition by Ramon Solis
 # _____________________________________________________
+
+# ---------------------------------------------------------
+# Auto-Dependency Installer (With Admin Auto-Elevation)
+# ---------------------------------------------------------
 import sys
 import subprocess
 import importlib.util
 import ctypes
 
-# Added 'pyotp' for Google/MS Authenticator MFA
 REQUIRED_PACKAGES = {
     "meraki": "meraki",
     "fpdf": "fpdf2",
@@ -493,7 +493,8 @@ def verify_and_save_mfa(mfa_window, secret, user_code, is_setup=False):
     """Verifies the code. If it's setup mode, it saves the secret to .env"""
     totp = pyotp.TOTP(secret)
     
-    if totp.verify(user_input=user_code.strip()):
+    # CHANGED: Passed user_code directly to verify() instead of using user_input=
+    if totp.verify(user_code.strip()):
         if is_setup:
             # Save the new secret securely to the .env file
             dotenv_file = find_dotenv()
