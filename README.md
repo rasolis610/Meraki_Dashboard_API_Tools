@@ -9,9 +9,10 @@ The tool generates instant, on-screen console readouts as well as highly polishe
 Required Software
 • Python 3.8+ installed on your system.
 • Required Python Libraries: meraki, fpdf, matplotlib, python-dotenv
+Install the  Library>>>>> pip install meraki fpdf2 matplotlib python-dotenv
 API Requirements
 You must have a valid Cisco Meraki API Key generated from an account with at least "Read-Only" organization access.
-2. Authentication & The .env File
+3. Authentication & The .env File
 This application utilizes a hybrid, highly secure authentication model to prevent hardcoding secret keys.
 Method A: Automatic Silent Login
 1. Create a plain text file named exactly .env in the same folder as the script.
