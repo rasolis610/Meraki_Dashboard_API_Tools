@@ -3,6 +3,7 @@
 #
 # Meraki Dashboard Tools API GUI Edition by Ramon Solis
 #
+# pip install meraki fpdf2 matplotlib python-dotenv
 # Compiler pyinstaller --onefile --noconsole Script.py
 # _____________________________________________________
 import gc
