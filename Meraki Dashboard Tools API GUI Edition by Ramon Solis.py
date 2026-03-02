@@ -394,7 +394,7 @@ def tool_daily_report():
         pdf.add_table("Meraki APs Running Below 1 Gbps", ['AP Name', 'Current Speed', 'Upstream Switch', 'Switch Port'], [80, 40, 90, 60], slow_aps_data)
     if networks_data:
         pdf.add_page() 
-        pdf.add_table("Existing School Networks Dashboard", ['Network Name', 'Network ID', 'Time Zone', 'Tags'], [80, 50, 70, 70], networks_data)
+        pdf.add_table("Existing Networks Dashboard", ['Network Name', 'Network ID', 'Time Zone', 'Tags'], [80, 50, 70, 70], networks_data)
 
     final_filename = f"Executive_Daily_Report_{datetime.now().strftime('%Y_%m_%d')}.pdf"
     pdf.output(final_filename)
@@ -479,7 +479,7 @@ def open_main_menu(root_window=None):
         ("5) Show Total Cameras Online", tool_total_cameras_online),
         ("6) Show Total Sensors Online", tool_total_sensors_online),
         ("7) Show Alerting/Offline APs", lambda: tool_ap_statuses('offline')),
-        ("8) Show Existing School Networks", tool_existing_networks),
+        ("8) Show Existing Networks", tool_existing_networks),
         ("9) Show APs Reported Down Today", tool_aps_down_today),
         ("10) Generate Executive Daily Report (PDF)", tool_daily_report)
     ]
@@ -639,3 +639,4 @@ def create_splash_screen():
 # ----------------------------
 if __name__ == "__main__":
     create_splash_screen()
+
