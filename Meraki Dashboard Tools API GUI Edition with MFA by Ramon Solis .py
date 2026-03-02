@@ -6,7 +6,9 @@
 
 # ---------------------------------------------------------
 # Auto-Dependency Installer (With Admin Auto-Elevation)
-# ---------------------------------------------------------
+# pip install meraki fpdf2 matplotlib python-dotenv
+# Compiler pyinstaller --onefile --noconsole Script.py
+# _____________________________________________________
 import sys
 import subprocess
 import importlib.util
@@ -757,3 +759,4 @@ def create_splash_screen():
 # ----------------------------
 if __name__ == "__main__":
     create_splash_screen()
+
